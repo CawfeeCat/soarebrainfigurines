@@ -18,14 +18,12 @@
 </head>
 <body>
 
-<!---------Navigation------------>
-
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
 <div class="container-fluid position-relative">
 <!-- Left: Breadcrumbs (visible only on desktop) -->
-<nav aria-label="breadcrumb" class="d-none d-lg-block"  data-bs-toggle="tooltip" title="your path on the site">
+<nav aria-label="breadcrumb" class="d-none d-lg-block" data-bs-toggle="tooltip" title="your path on the site">
   <ol class="breadcrumb mb-0">
-  <li class="breadcrumb-item active text-white" aria-current="home">Home</li>
+ <li class="breadcrumb-item active text-white" aria-current="Home">Home</li>
   </ol>
 </nav>
 <!-- Center: Logo (always centered on mobile, hidden on desktop) -->
@@ -47,11 +45,12 @@
   <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
   <nav aria-label="breadcrumb" class="d-lg-none mx-2 my-3" data-bs-toggle="tooltip" title="your path on the site">
  <ol class="breadcrumb mb-0 text-start">
- <li class="breadcrumb-item active text-white" aria-current="Home">Home</li>
+ <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+ <li class="breadcrumb-item active text-white" aria-current="Page">Product Page</li>
  </ol>
  </nav>
     <ul class="navbar-nav d-flex flex-row align-items-center">
-  <li class="nav-item mx-2 d-flex align-items-center"  data-bs-toggle="tooltip" title="We use this currency only">
+   <li class="nav-item mx-2 d-flex align-items-center"  data-bs-toggle="tooltip" title="We use this currency only">
   <span class="navbar-text text-white me-3">
         <strong>EUR€</strong>
       </span>
@@ -76,6 +75,7 @@
 </div>
 </nav>
 
+<header>
 <div class="container-fluid p-0 position-relative d-flex align-items-center justify-content-left text-left text-white"
      style="background-image: url('footage/placeholder.png'); background-attachment: fixed; background-position: center; background-size: cover; min-height: 600px;">
   <div class="px-5 mt-auto mb-5">
@@ -85,27 +85,29 @@
   </div>
 </div>
 
+</header>
 
+<main>
 <div class="container-fluid my-4 border-top border-bottom border-white py-4">
   <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-3 justify-content-center text-center px-auto">
     <div class="col">
       <img src="footage/icons/cashback-icon.png" alt="30 day money back" height="55" class="mb-4">
-      <h3>30 Days Money Back!</h3>
+      <h2 class="promises">30 Days Money Back!</h2>
       <p>If it's not the right one for you. (Exceptions apply <a class="int-link" href="AGB.html">here</a>)</p>
     </div>
     <div class="col">
       <img src="footage/icons/free-shipping-icon.png" alt="Free shipping" height="55" class="mb-4">
-      <h3>Free Shipping or orders over <h3 class="price" data-amount="100">100€</h3>
+      <h2 class="promises">Free Shipping or orders over 100€</h2>
       <p>If it's not the right one for you. (Exceptions apply <a class="int-link" href="AGB.html">here</a>)</p>
     </div>
     <div class="col">
       <img src="footage/icons/two-hearts-icon.png" alt="Hearts" height="55" class="mb-4">
-      <h3>Made with love</h3>
+      <h2 class="promises">Made with love</h2>
       <p>And no A.I.</p>
     </div>
     <div class="col">
       <img src="footage/icons/european-union-flag-round-circle-icon.png" alt="Shipping world wide" height="55" class="mb-4">
-      <h3>European Wide Shipping</h3>
+      <h2 class="promises">European Wide Shipping</h2>
       <p>Finally not just the USA! In fact, no USA at all :D</p>
     </div>
   </div>
@@ -222,7 +224,7 @@
 
 </div>
 
-
+</main>
 
 
 <!---Footer--->
