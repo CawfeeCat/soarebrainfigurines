@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="icon" type="image/x-icon" href="footage/icons/logo02.png">
+    <!---Section for Stuff like the favicon-->
+
+    <!----Section for style links (css, bootstrap, google fonts)---->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    
+<!---------Navigation------------>
+
+
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+<div class="container-fluid position-relative">
+<!-- Left: Breadcrumbs (visible only on desktop) -->
+<nav aria-label="breadcrumb" class="d-none d-lg-block" data-bs-toggle="tooltip" title="your path on the site">
+  <ol class="breadcrumb mb-0">
+<li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+ <li class="breadcrumb-item active text-white" aria-current="Cart">Cart</li>
+  </ol>
+</nav>
+<!-- Center: Logo (always centered on mobile, hidden on desktop) -->
+   <a class="navbar-brand d-lg-none ms-3" href="index.html">
+  <img src="footage/icons/logo02.png" alt="Logo" width="50">
+  </a>
+<!-- Right: Toggler -->
+  <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+
+<!-- Desktop Logo (hidden on mobile) -->
+  <a class="navbar-brand d-none d-lg-flex position-absolute start-50 translate-middle-x" href="index.html">
+  <img src="footage/icons/logo01_alt.png" alt="Logo" width="220">
+  </a>
+
+<!-- Collapsible Links (right-aligned on desktop, below logo on mobile) -->
+  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+  <nav aria-label="breadcrumb" class="d-lg-none mx-2 my-3" data-bs-toggle="tooltip" title="your path on the site">
+ <ol class="breadcrumb mb-0 text-start">
+<li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+ <li class="breadcrumb-item active text-white" aria-current="Cart">Cart</li>
+ </ol>
+ </nav>
+    <ul class="navbar-nav d-flex flex-row align-items-center">
+   <li class="nav-item mx-2 d-flex align-items-center"  data-bs-toggle="tooltip" title="We use this currency only">
+  <span class="navbar-text text-white me-3">
+        <strong>EUR€</strong>
+      </span>
+   </li>
+ <li class="nav-item mx-2">
+ <a class="nav-link banner-trigger" href="#" data-bs-toggle="tooltip" title="Wishlist">
+ <img src="footage/icons/heart-white-icon.png" alt="Wishlist" height="28">
+ </a>
+ </li>
+ <li class="nav-item mx-2">
+ <a class="nav-link" href="cart.html" data-bs-toggle="tooltip" title="Shopping Cart">
+ <img src="footage/icons/cart-white-icon.png" alt="Shopping Cart" height="28">
+ </a>
+ </li>
+ <li class="nav-item mx-2">
+ <a class="nav-link banner-trigger" href="#" data-bs-toggle="tooltip" title="Account">
+ <img src="footage/icons/account-white-icon.png" alt="Account" height="28">
+ </a>
+ </li> 
+ </ul>
+  </div>
+</div>
+</nav>
+
+
+<main>
+<div class="container mt-5 pt-5 pb-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <h1 class="mb-4 mt-4 pt-4">Shopping Cart</h1>
+      <p id="emptyCartText">your cart is currently empty</p>
+      <div id="cartItems" class="list-group d-none"></div>
+      
+      
+      <template id="cartItemTemplate">
+        <div class="list-group-item">
+          <div class="row align-items-center g-3">
+            <div class="col-3 col-md-2">
+              <img class="img-fluid cart-item-image" src="footage/placeholder.png" alt="Product image">
+            </div>
+            <div class="col-9 col-md-4">
+              <h5 class="mb-1 cart-item-name">Product</h5>
+              <small class="cart-item-price"> 0.00</small>
+            </div>
+            <div class="col-8 col-md-3">
+              <label class="form-label mb-1">Amount</label>
+              <input type="number" min="1" class="form-control cart-quantity" value="1">
+            </div>
+          <div class="col-12 col-md-1 px-3">
+              <label class="form-label mb-1">Total</label>
+              <div class="cart-item-total fw-bold">0.00</div>
+          </div>
+            <div class="col-4 col-md-2 text-md-end">
+              <button type="button" class="btn btn-outline-danger mt-md-4 cart-remove" aria-label="Remove Item">Remove</button>
+            </div>
+            
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</div>
+
+</main>
+
+ <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link px-2 text-body-secondary">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="aboutus.html" class="nav-link px-2 text-body-secondary">About us</a>
+          </li>
+          <li class="nav-item">
+            <a href="Impressum.html" class="nav-link px-2 text-body-secondary">Imprint</a>
+          </li>
+          <li class="nav-item">
+            <a href="FAQ.html" class="nav-link px-2 text-body-secondary">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a href="Datenschutz.html" class="nav-link px-2 text-body-secondary">Privacy Policy</a>
+          </li>
+          <li class="nav-item">
+            <a href="AGB.html" class="nav-link px-2 text-body-secondary">AGB and Licenses</a>
+          </li>
+           <li class="nav-item">
+            <a href="BarriereFreiheit.html" class="nav-link px-2 text-body-secondary">Accessibility</a>
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">&copy; 2026 Soare Brain Figurines OG</p>
+        <p class="text-center text-body-secondary">Site made with Caffeine and Bootstrap • Icons from <a class= "ext-link" href="https://uxwing.com/license/" class="text-decoration-underline" data-bs-toggle="tooltip" data-bs-placement="top" title="This link leads to an external website">uxwing.com</a> under their license and with some colouring modifications</p>
+
+      </footer>
+  </div>
+
+
+<div class="fixed-bottom py-4 px-3">
+  <div class="container py-3 d-flex justify-content-between align-items-center ">
+    <strong id="cartTotalText">Total: 0.00</strong>
+<button type="button" class="btn btn-primary" id="checkoutButton" disabled aria-label="Checkout Button">
+<a href="payment.html" class="text-black text-decoration-none stretched-link">Checkout</a>
+</button>
+  </div>
+</div>
+
+
+
+  <div id="errorBannerLink" class="alert alert-dark alert-dismissible fade show fixed-bottom mb-0 rounded-0 text-center d-none" role="alert">
+  <h3>ERROR!</h3>
+  <p>This link is a decoy. (Press Enter to dismiss)</p>
+  <div class="d-flex justify-content-center gap-2">
+    <button type="button" class="btn btn-link text-white p-0" id="errorBannerDismiss" aria-label="Dismiss Banner">Oh, alright!</button>
+  </div>
+</div>
+
+<script src="Language_currency.js"></script>
+<script src="decoylink.js"></script>
+
+
+
+<script>
+  initDecoyLinkBanner({
+    bannerId: 'errorBannerLink',
+    triggerSelector: '.banner-trigger',
+    dismissId: 'errorBannerDismiss',
+    preventDefault: true
+  })
+</script>
+
+<script>
+// Initialize tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)})
+</script>
+
+<script>
+var cartStorageKey = 'webshopCart'
+var emptyCartText = document.getElementById('emptyCartText')
+var cartItems = document.getElementById('cartItems')
+var cartTotalText = document.getElementById('cartTotalText')
+var cartItemTemplate = document.getElementById('cartItemTemplate')
+var currencySelect = document.getElementById('currencySelect')
+var checkoutButton = document.getElementById('checkoutButton')
+
+function getCart() {
+ try {
+ return JSON.parse(localStorage.getItem(cartStorageKey)) || []
+ } catch (error) {
+ return []
+ }
+}
+
+function saveCart(cart) {
+ localStorage.setItem(cartStorageKey, JSON.stringify(cart))
+}
+
+function formatPrice(value) {
+ return '€' + value.toFixed(2)
+}
+
+function createCartItemElement(item) {
+ var fragment = cartItemTemplate.content.cloneNode(true)
+ var root = fragment.querySelector('.list-group-item')
+ var image = fragment.querySelector('.cart-item-image')
+ var name = fragment.querySelector('.cart-item-name')
+ var price = fragment.querySelector('.cart-item-price')
+ var quantity = fragment.querySelector('.cart-quantity')
+ var remove = fragment.querySelector('.cart-remove')
+ var total = fragment.querySelector('.cart-item-total')
+
+ image.src = item.image
+ image.alt = item.name
+ name.textContent = item.name
+ price.textContent = formatPrice(item.price)
+ quantity.value = item.quantity
+ quantity.setAttribute('data-id', item.id)
+ remove.setAttribute('data-id', item.id)
+ total.textContent = formatPrice(item.price * item.quantity)
+
+ return root
+}
+
+// Just enable/disable the button - the link handles navigation
+function renderCart(
+) {
+ var cart = getCart()
+ var total = 0
+if (cart.length === 0) {
+ emptyCartText.classList.remove('d-none')
+ cartItems.classList.add('d-none')
+ cartItems.replaceChildren()
+ cartTotalText.textContent = 'Total: ' + formatPrice(0)
+ if (checkoutButton) {
+ checkoutButton.disabled = true
+}
+ return
+}
+
+ emptyCartText.classList.add('d-none')
+ cartItems.classList.remove('d-none')
+
+ var itemElements = cart.map(function (item) {
+ total += item.price * item.quantity
+return createCartItemElement(item)
+ })
+
+ cartItems.replaceChildren.apply(cartItems, itemElements)
+ cartTotalText.textContent = 'Total: ' + formatPrice(total)
+ if (checkoutButton) {
+ checkoutButton.disabled = false
+}
+}
+
+
+// Update prices when currency changes
+
+
+cartItems.addEventListener('input', function (event) {
+ if (!event.target.classList.contains('cart-quantity')) {
+ return
+ }
+
+ var itemId = event.target.getAttribute('data-id')
+ var value = parseInt(event.target.value, 10)
+ var quantity = Number.isNaN(value) || value < 1 ? 1 : value
+ event.target.value = quantity
+
+ var cart = getCart()
+ var item = cart.find(function (entry) {
+ return entry.id === itemId
+ })
+
+ if (item) {
+ item.quantity = quantity
+ saveCart(cart)
+ renderCart()
+ }
+})
+
+cartItems.addEventListener('click', function (event) {
+ if (!event.target.classList.contains('cart-remove')) {
+ return
+ }
+
+ var itemId = event.target.getAttribute('data-id')
+ var cart = getCart().filter(function (item) {
+ return item.id !== itemId
+ })
+
+ saveCart(cart)
+ renderCart()
+})
+
+// Initial render
+renderCart()
+</script>
+
+
+
+</body>
+</html>
