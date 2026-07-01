@@ -258,7 +258,8 @@ var cartStorageKey = 'webshopCart'
 var itemAddedBanner = document.getElementById('itemAddedBanner')
 var itemAddedBannerDismiss = document.getElementById('itemAddedBannerDismiss')
 
-putInCartButton.addEventListener('click', function () {
+putInCartButton.addEventListener('click', function (
+) {
   var cart = []
   try {
     cart = JSON.parse(localStorage.getItem(cartStorageKey)) || []
@@ -267,28 +268,33 @@ putInCartButton.addEventListener('click', function () {
   }
 
   var productId = 'product-name'
-  var existingItem = cart.find(function (item) {
+var existingItem = cart.find(function (item) {
     return item.id === productId
   })
 
   if (existingItem) {
     existingItem.quantity += 1
-  } else {
+} else {
     cart.push({
       id: productId,
       name: 'Cawfee Figurine',
       price: 180.00,
       image: 'footage/productImages/Cawfee01.png',
       quantity: 1
-    })
+})
   }
 
   localStorage.setItem(cartStorageKey, JSON.stringify(cart))
   itemAddedBanner.classList.remove('d-none')
+
+  itemAddedBannerDismiss.addEventListener('click', function () {
+  itemAddedBanner.classList.add('d-none')
 })
 
-itemAddedBannerDismiss.addEventListener('click', function () {
-  itemAddedBanner.classList.add('d-none')
+  // ✅ Focus the dismiss button immediately after banner appears
+requestAnimationFrame(() => {
+    itemAddedBannerDismiss.focus()
+  })
 })
 </script>
 
